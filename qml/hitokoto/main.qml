@@ -140,6 +140,7 @@ Rectangle {
 
     }
     Component.onCompleted: {
+        console.log("app started")
         fontlen = FontAwesome.keysArray.length;
         JS.signalcenter = signalcenter
         JS.app = window

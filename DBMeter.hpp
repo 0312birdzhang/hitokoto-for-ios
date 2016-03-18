@@ -1,5 +1,7 @@
 #include <QAudioRecorder>
 #include <QAudioProbe>
+#include <cstdlib>
+#include <stdbool.h>
 
 class DBMeter : public QObject {
     Q_OBJECT

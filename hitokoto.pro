@@ -8,6 +8,7 @@ SOURCES += main.cpp \
 
 RESOURCES += qml.qrc
 
+CONFIG += C++11
 
 #ios: {
 #    QMAKE_INFO_PLIST = $$PWD/hitokoto-Info.plist

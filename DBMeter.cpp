@@ -3,7 +3,7 @@
 #include <QtConcurrent>
 #include <QCoreApplication>
 #include <stdint.h>
-
+#include <cstdint>
 #include "DBMeter.hpp"
 
 using namespace std;
