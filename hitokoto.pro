@@ -9,13 +9,13 @@ SOURCES += main.cpp \
 RESOURCES += qml.qrc
 
 
-ios: {
-    QMAKE_INFO_PLIST = $$PWD/hitokoto-Info.plist
-    QTPLUGIN +=  qsvg
-    OTHER_FILES += hitokoto-Info.plist
-    icons.files += gfx/btn.png
-    QMAKE_BUNDLE_DATA += icons
-}
+#ios: {
+#    QMAKE_INFO_PLIST = $$PWD/hitokoto-Info.plist
+#    QTPLUGIN +=  qsvg
+#    OTHER_FILES += hitokoto-Info.plist
+#    icons.files += gfx/btn.png
+#    QMAKE_BUNDLE_DATA += icons
+#}
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -30,7 +30,8 @@ OTHER_FILES += \
     qml/hitokoto/Signalcenter.qml \
     qml/hitokoto/DBMeterController.qml \
     qml/hitokoto/gfx.jpg \
-    qml/hitokoto/fontawesome-webfont.ttf
+    qml/hitokoto/fontawesome-webfont.ttf \
+    qml/hitokoto/Themex.qml
 
 HEADERS += \
     DBMeter.hpp

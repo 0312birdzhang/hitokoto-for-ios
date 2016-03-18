@@ -7,5 +7,6 @@
         <file>qml/hitokoto/gfx.jpg</file>
         <file>qml/hitokoto/fontawesome-webfont.ttf</file>
         <file>qml/hitokoto/fontawesome.js</file>
+        <file>qml/hitokoto/Themex.qml</file>
     </qresource>
 </RCC>

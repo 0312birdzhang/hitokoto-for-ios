@@ -1,5 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Controls 1.0
+import QtQuick.Controls.Styles 1.0
+import QtQuick.Window 2.1
 import QtSensors 5.0
 import "./main.js" as JS
 import "./fontawesome.js" as FontAwesome
@@ -7,8 +9,8 @@ import harbour.saildbmeter.dbmeter 1.0
 
 Rectangle {
     id: window
-    width: Screen.width
-    height: Screen.height
+    width: isMobile() ? Screen.width : 480
+    height: isMobile() ? Screen.height : 800
 
     property string hitokoto;
     property string  source
@@ -30,6 +32,20 @@ Rectangle {
         }
     }
 
+    function isMobile() {
+                var b = false
+                switch(Qt.platform.os) {
+                case "ios":
+                    b = true
+                    break
+                case "android":
+                    b = true
+                    break
+                }
+                console.log("ismobile:"+b)
+                return b
+            }
+
     Connections{
         target: signalcenter;
         onLoadStarted:{
@@ -47,6 +63,10 @@ Rectangle {
 
     Signalcenter{
         id:signalcenter
+    }
+
+    Themex{
+        id:themex
     }
 
     SensorGesture {
@@ -77,19 +97,19 @@ Rectangle {
 
     Flickable{
         anchors.fill: parent
-        contentHeight: detectedText.height + contentExt.height + Theme.paddingMedium
+        contentHeight: detectedText.height + contentExt.height + themex.paddingMedium
         Label{
             id:detectedText
             anchors{
                 left:parent.left
                 right:parent.right
-                margins: Theme.paddingMedium
+                margins: themex.paddingMedium
             }
             y:window.height / 2 - detectedText.height /2
             width: parent.width
             wrapMode: Text.WordWrap
-            font.pixelSize: Theme.fontSizeLarge
-            color: Theme.highlightColor
+            font.pixelSize: themex.fontSizeLarge
+            color: themex.highlightColor
             opacity:0.7
             font.family: "FontAwesome"
             font.bold: true
@@ -109,12 +129,12 @@ Rectangle {
             text:"——"+(source?(source+","):"")+catname
             width:parent.width * 0.7
             wrapMode: Text.WordWrap
-            font.pixelSize:Theme.fontSizeSmall
+            font.pixelSize:themex.fontSizeSmall
             horizontalAlignment: Text.AlignRight
             anchors{
                 top:detectedText.bottom
                 right:parent.right
-                margins: Theme.paddingMedium
+                margins: themex.paddingMedium
             }
         }
 
