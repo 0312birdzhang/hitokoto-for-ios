@@ -1,12 +1,11 @@
 <RCC>
     <qresource prefix="/">
-        <file>qml/hitokoto/main.qml</file>
-        <file>qml/hitokoto/Signalcenter.qml</file>
-        <file>qml/hitokoto/DBMeterController.qml</file>
-        <file>qml/hitokoto/main.js</file>
-        <file>qml/hitokoto/gfx.jpg</file>
-        <file>qml/hitokoto/fontawesome-webfont.ttf</file>
-        <file>qml/hitokoto/fontawesome.js</file>
-        <file>qml/hitokoto/Themex.qml</file>
+        <file>main.qml</file>
+        <file>qml/fontawesome.js</file>
+        <file>qml/fontawesome-webfont.ttf</file>
+        <file>qml/gfx.jpg</file>
+        <file>qml/main.js</file>
+        <file>qml/Signalcenter.qml</file>
+        <file>qml/Themex.qml</file>
     </qresource>
 </RCC>

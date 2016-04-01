@@ -1,4 +1,3 @@
-
 TEMPLATE = app
 
 QT += qml quick widgets  sensors svg xml  gui multimedia concurrent declarative
@@ -18,22 +17,24 @@ CONFIG += C++11
 #    QMAKE_BUNDLE_DATA += icons
 #}
 
+
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
 
 # Default rules for deployment.
 include(deployment.pri)
 
-OTHER_FILES += \
-    qml/hitokoto/main.js \
-    qml/hitokoto/fontawesome.js \
-    qml/hitokoto/main.qml \
-    qml/hitokoto/Signalcenter.qml \
-    qml/hitokoto/DBMeterController.qml \
-    qml/hitokoto/gfx.jpg \
-    qml/hitokoto/fontawesome-webfont.ttf \
-    qml/hitokoto/Themex.qml
 
-HEADERS += \
-    DBMeter.hpp
+DISTFILES += \
+    android/AndroidManifest.xml \
+    android/gradle/wrapper/gradle-wrapper.jar \
+    android/gradlew \
+    android/res/values/libs.xml \
+    android/res/values/strings.xml \
+    android/build.gradle \
+    android/gradle/wrapper/gradle-wrapper.properties \
+    android/gradlew.bat \
 
+ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
+
+HEADERS +=
