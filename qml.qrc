@@ -7,6 +7,5 @@
         <file>qml/main.js</file>
         <file>qml/Signalcenter.qml</file>
         <file>qml/Themex.qml</file>
-        <file>qml/DBMeterController.qml</file>
     </qresource>
 </RCC>

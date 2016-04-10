@@ -1,8 +1,8 @@
-import QtQuick 2.6
-import QtQuick.Controls 1.5
+import QtQuick 2.5
+import QtQuick.Controls 1.4
 import QtQuick.Dialogs 1.2
 import QtQuick.Window 2.0
-import QtSensors 5.3
+import QtSensors 5.0
 import "qml/main.js" as JS
 import "qml/fontawesome.js" as FontAwesome
 import "qml"
@@ -10,8 +10,8 @@ import "qml"
 ApplicationWindow {
     id:window
     visible: true
-    width: isMobile() ? Screen.width : 480
-    height: isMobile() ? Screen.height : 800
+    width: isMobile() ? Screen.width : 540
+    height: isMobile() ? Screen.height : 960
 
     property string hitokoto;
     property string  source
@@ -19,19 +19,7 @@ ApplicationWindow {
     property string  catname
     property bool loading: false
     property int fontlen: 0
-    property alias level: meterObject.level
 
-    DBMeterController {
-        id: meterObject
-        running: Qt.application.active
-    }
-
-    onLevelChanged: {
-        console.log("level:"+level)
-        if(level.toFixed(2) > 80.00){
-            JS.gethitokoto();
-        }
-    }
 
     function isMobile() {
                 var b = false
@@ -133,6 +121,8 @@ ApplicationWindow {
                     copy(hitokoto);
 
                 }
+
+                onDoubleClicked: JS.gethitokoto()
             }
         }
         Label{

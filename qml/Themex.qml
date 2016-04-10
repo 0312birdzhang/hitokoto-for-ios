@@ -1,7 +1,7 @@
 //import QtQuick 2.3
 //import QtQuick.Controls 1.2
-import QtQuick 2.6
-import QtQuick.Controls 1.5
+import QtQuick 2.5
+import QtQuick.Controls 1.4
 
 QtObject {
     id: mytheme;
