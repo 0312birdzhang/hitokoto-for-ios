@@ -19,19 +19,19 @@ ApplicationWindow {
     property string  catname
     property bool loading: false
     property int fontlen: 0
-    //property alias level: meterObject.level
+    property alias level: meterObject.level
 
-//    DBMeterController {
-//        id: meterObject
-//        running: Qt.application.active
-//    }
+    DBMeterController {
+        id: meterObject
+        running: Qt.application.active
+    }
 
-//    onLevelChanged: {
-//        console.log("level:"+level)
-//        if(level.toFixed(2) > 80.00){
-//            JS.gethitokoto();
-//        }
-//    }
+    onLevelChanged: {
+        console.log("level:"+level)
+        if(level.toFixed(2) > 80.00){
+            JS.gethitokoto();
+        }
+    }
 
     function isMobile() {
                 var b = false
@@ -73,8 +73,8 @@ ApplicationWindow {
     SensorGesture {
         id:gestureid
         gestures : ["QtSensors.shake","QtSensors.shake2",
-                    "QtSensors.cover","QtSensors.doubletap","QtSensors.hover","QtSensors.pickup",
-                    "QtSensors.slam","QtSensors.turnover","QtSensors.twist","QtSensors.whip"]
+                    "QtSensors.cover","QtSensors.doubletap","QtSensors.pickup"]
+                   // "QtSensors.hover","QtSensors.slam","QtSensors.turnover","QtSensors.twist","QtSensors.whip"]
         enabled: true
         onDetected:{
             JS.gethitokoto()
@@ -155,7 +155,7 @@ ApplicationWindow {
             visible: false
         }
     Component.onCompleted: {
-        console.log("app started")
+        console.log("app started");
         fontlen = FontAwesome.keysArray.length;
         JS.signalcenter = signalcenter
         JS.app = window

@@ -2,12 +2,12 @@ TEMPLATE = app
 
 QT += qml quick widgets  sensors svg xml  gui multimedia concurrent declarative
 
-SOURCES += main.cpp \
-    DBMeter.cpp
+CONFIG += c++11
+
+SOURCES += main.cpp 
 
 RESOURCES += qml.qrc
 
-CONFIG += C++11
 
 #ios: {
 #    QMAKE_INFO_PLIST = $$PWD/hitokoto-Info.plist
@@ -34,7 +34,9 @@ DISTFILES += \
     android/build.gradle \
     android/gradle/wrapper/gradle-wrapper.properties \
     android/gradlew.bat \
+    qml/DBMeterController.qml
 
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 
-HEADERS +=
+HEADERS += \
+    DBMeter.hpp
